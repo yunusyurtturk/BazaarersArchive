@@ -1,0 +1,65 @@
+<div class="row top-menu-area">
+   <div class="col-xs-11 col-sm-8">
+       <div class="top-menu">
+        <ul>
+        {{#is-logged-in}}
+            <li>
+                <a href="{{top-menu-add-item-link}}"><i class="fa fa-plus"></i><span>{{top-menu-add-item-text}}</span></a>
+            </li>
+            <li class="dropdown">
+                <a href="{{top-menu-news-link}}" class="dropdown-toggle" data-toggle="dropdown" onclick="readNews('{{read-news-action}}')">
+                    <i class="fa fa-list"></i>{{top-menu-news-text}} <span class="label label-danger" id="unreadNewsCountBadge">{{unread-news-count}}</a>
+                 </a>
+                <ul class="dropdown-menu news-dropdown" role="menu">
+
+                    {{#news}}
+                        <li class="{{#unread}}unread-news-in-list{{/unread}}"><a class="news-in-list" href="{{action}}">{{news-text}}</a> <span style="color: #0066cc; font-size: 0.7em;">{{news-date}}</span> </li>
+
+                    {{/news}}
+                    {{^news}}
+                        <li><a class="news-in-list">{{news-error-message}}</a> </li>
+
+                    {{/news}}
+                 </ul>
+            </li>
+            <li>
+                <a href="{{top-menu-my-profile-link}}"><i class="fa fa-user"></i>{{top-menu-my-profile-text}}</a>
+            </li>
+            <li>
+                <a href="{{top-menu-item-messages-link}}"><i class="fa fa-envelope"></i>{{top-menu-item-messages-text}}</a>
+            </li>
+            <li>
+                <a href="{{top-menu-logout-link}}"><i class="fa fa-times"></i>{{top-menu-logout-text}}</a>
+            </li>
+        {{/is-logged-in}}
+        {{^is-logged-in}}
+
+            <li>
+                <a href="{{top-menu-add-item-link}}"><i class="fa fa-plus"></i>{{top-menu-add-item-text}}</a>
+            </li>
+            <li>
+                <a href="{{top-menu-login-link}}"><i class="fa fa-key"></i>{{top-menu-login-text}}</a>
+            </li>
+            <li>
+                <a href="{{top-menu-register-link}}"><i class="fa fa-user-plus"></i>{{top-menu-register-text}}</a>
+            </li>
+        {{/is-logged-in}}
+
+        </ul>
+       </div>
+   </div>
+    <div class="col-xs-1 col-sm-4">
+        <ul class="list-unstyled list-inline pull-right">
+
+            <li class="dropdown dropdown-small">
+                <a data-toggle="dropdown" data-hover="dropdown" class="dropdown-toggle" href="#"><span class="key visible-xs hidden-ms fa fa-globe"></span><span class="key hidden-xs">{{choose-locale-text}} :<span class="value">{{current-locale-text}}</span><b class="caret"></b></span></a>
+
+                <ul class="dropdown-menu dropdown-menu-right">
+                    <li><a href="{{locale-english-url}}">{{locale-english-text}}</a></li>
+                    <li><a href="{{locale-turkish-url}}">{{locale-turkish-text}}</a></li>
+                </ul>
+            </li>
+        </ul>
+
+    </div>
+</div>

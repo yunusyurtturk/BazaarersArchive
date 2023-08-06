@@ -1,0 +1,27 @@
+<!-- Modal -->
+<div class="modal fade" id="reportConversationModal" tabindex="-1" role="dialog" aria-labelledby="reportConversationModalLabel">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                <h4 class="modal-title" id="reportConversationModalLabel">Report Conversation</h4>
+            </div>
+            <div class="modal-body">
+                <form id="reportConversationForm">
+
+                    <div class="form-group">
+                        <label for="reportReasonText" class="control-label">Tell us the reason:</label>
+                        <textarea class="form-control" name="{{report-conversation-conversation-reason-input-name}}" id="reportReasonText"></textarea>
+                        <input type="hidden" id="reportConversationID" name="{{report-conversation-conversation-id-input-name}}" value="">
+                        <input type="hidden" name="form-action" id="reportConversationFormAction" value="">
+                    </div>
+                </form>
+                
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
+                <button type="button" class="btn btn-primary" onclick="reportConversation('{{report-conversation-action}}')">Report</button>
+            </div>
+        </div>
+    </div>
+</div>

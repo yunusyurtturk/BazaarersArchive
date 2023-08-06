@@ -1,0 +1,74 @@
+
+{{#has-messages}}
+<div class="col-xs-12 col-md-6" style="">
+    <div class="row">
+        <ul class="nav nav-tabs">
+            <li class="active"><a href="#inbox" data-toggle="tab">{{item-messages-inbox-name}}</a></li>
+            <li><a href="#outbox" data-toggle="tab">{{item-messages-outbox-name}}</a></li>
+            <a  class="hidden-md hidden-lg pull-right" onclick="showAllLastItemmessages()" data-toggle="tab" style="display: list-item; padding: 10px;">Show Messages</a>
+        </ul>
+        <!-- Tab panes -->
+        <div class="tab-content">
+            <div class="tab-pane active" id="inbox">
+                <div class="col-md-12" id="itemMessagesInboxContainer">
+
+                    {{#inbox}}A
+                        {{#messages}}
+                            {{>last-message-in-list}}
+                        {{/messages}}
+
+                    {{/inbox}}
+
+                    {{^inbox}}
+                        <div class="bg-warning bg-indicator-styler" style="padding: 1em;">
+                        {{inbox-empty-message}}
+                        </div>
+                    {{/inbox}}
+
+                </div>
+            </div>
+            <div class="tab-pane" id="outbox">
+                <div  class="col-md-12" id="itemMessagesOutboxContainer">
+                    {{#outbox}}
+                        {{#messages}}
+                            {{>last-message-in-list}}
+                        {{/messages}}
+                    {{/outbox}}
+                    {{^outbox}}
+                        <div class="bg-warning bg-indicator-styler" style="padding: 1em;">
+                            {{outbox-empty-message}}
+                        </div>
+                    {{/outbox}}
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="col-xs-12 col-md-6 selected-last-message" style="padding-bottom: 2em; min-height: 20em; padding-top: 0.7em;">
+    <strong class="text-primary">
+        {{itemmessages-header-text}}
+    </strong>
+    <div id="specificItemMessagesContainer" style="display: none;">
+        {{>itemmessage-send-form}}
+        {{>item-message-agreement-container}}
+    </div>
+    <div id="conversationContainer">
+        {{>itemmessages-header}}
+
+
+
+    </div>
+    <div class="clearfix"></div>
+    <div  id="itemMessagesLoadingIndicator" style="width: 100%; text-align: center; display: none;">
+        <img  src="/oop/web/images/ajax-loader.gif" />
+    </div>
+
+</div>
+{{/has-messages}}
+{{^has-messages}}
+<div class="col-md-12" style="margin-top: 2em;">
+    <p class=" bg-warning" style=" padding-top: 1em; padding-bottom: 1em; padding-left: 1em; padding-right: 1em;">{{no-entry-message}}</p>
+
+</div>
+{{/has-messages}}

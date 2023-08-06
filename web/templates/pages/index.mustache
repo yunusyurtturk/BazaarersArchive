@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    {{>header}}
+
+
+
+<body {{#request-location}}onload="requestLocation()"{{/request-location}}>
+
+    <div class="container maincontainer ">
+        {{>top-menu}}
+        {{>logo-container}}
+        {{>user-main-tab-menu}}
+        <div class="row" id="content-container">
+            {{>category-list}}
+            {{>main-container}}
+        </div>
+
+    </div>
+
+
+</body>
+</html>
+

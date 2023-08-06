@@ -1,0 +1,22 @@
+<div class="categories col-xs-12 col-sm-12 col-md-3">
+    <div class="navbar-header" style="background:  #000000;">
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#categoriesCont">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+        </button>
+
+    </div>
+
+    <div class="navbar-collapse collapse" id="categoriesCont">
+        <ul class="nav nav-list">
+            <h3>{{categories-header}}</h3>
+            {{#categories}}
+                <li><a href="javascript:void(0);" onclick="filterItems({{cat-id}})">{{category-name}}</a></li>
+            {{/categories}}
+
+
+        </ul>
+    </div>
+</div>

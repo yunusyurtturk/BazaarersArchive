@@ -1,0 +1,44 @@
+
+<head>
+    <title>{{page-title}}</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <meta property="og:url"                content="{{og-url}}" />
+    <meta property="og:type"               content="{{og-type}}" />
+    <meta property="og:title"              content="{{og-title}}" />
+    <meta property="og:description"        content="{{og-description}}" />
+    <meta property="og:image"              content="{{site-addr}}/userpics/{{og-image}}" />
+
+    <!-- Google Fonts -->
+    <link href='https://fonts.googleapis.com/css?family=Titillium+Web:400,200,300,700,600' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Roboto+Condensed:400,700,300' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Raleway:400,100' rel='stylesheet' type='text/css'>
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+    <link href="https://gitcdn.github.io/bootstrap-toggle/2.2.2/css/bootstrap-toggle.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+
+    <link rel="stylesheet" href="{{site-addr}}/oop/web/css/main.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+    <script src="https://npmcdn.com/imagesloaded@4.1/imagesloaded.pkgd.min.js"></script>
+    <script src="https://gitcdn.github.io/bootstrap-toggle/2.2.2/js/bootstrap-toggle.min.js"></script>
+    <script src="{{site-addr}}/oop/web/js/masonry.pkgd.min.js"></script>
+
+
+    <script src="{{site-addr}}/oop/web/js/mustache.min.js"></script>
+    <script src="{{site-addr}}/oop/web/js/main.js"></script>
+
+    <script src="{{site-addr}}/oop/web/js/additem.js"></script>
+    {{#templates}}
+        <script type="text/template" id="{{template-id}}">
+                {{template}}
+        </script>
+
+    {{/templates}}
+
+</head>

@@ -1,0 +1,26 @@
+<div class="col-xs-12" id="agreementBoxesContainer">
+    <div class="checkbox-inline">
+        <label>
+            <input type="checkbox"  name="{{owner-agreement-input-name}}" onclick="toggleAgreement('{{agreement-toggle-link}}', $(this));" {{#owner-agreed}}checked{{/owner-agreed}} {{#owner-agreed-disabled}}disabled{{/owner-agreed-disabled}}> {{checkbox-desirer-agreed-text}}
+        </label>
+    </div>
+
+    <div class="checkbox-inline">
+        <label>
+            <input type="checkbox" name="{{desirer-agreement-input-name}}" onclick="toggleAgreement('{{agreement-toggle-link}}', $(this));" {{#desirer-agreed-disabled}}disabled{{/desirer-agreed-disabled}} {{#desirer-agreed}}checked{{/desirer-agreed}}> {{checkbox-desirer-agreed-text}}
+        </label>
+    </div>
+
+
+    <div class="checkbox-inline">
+        <label>
+            <input type="checkbox" name="{{owner-gave-input-name}}" onclick="toggleAgreement('{{exchange-toggle-link}}', $(this));" {{#owner-gave}}checked{{/owner-gave}} {{#owner-gave-disabled}}disabled{{/owner-gave-disabled}}> {{owner-gave-text}}
+        </label>
+    </div>
+    <div class="checkbox-inline">
+        <label>
+            <input type="checkbox" name="{{desirer-got-input-name}}" onclick="toggleAgreement('{{exchange-toggle-link}}', $(this));" {{#desirer-got}}checked{{/desirer-got}} {{#desirer-got-disabled}}disabled{{/desirer-got-disabled}}> {{desirer-got-text}}
+        </label>
+    </div>
+
+</div>

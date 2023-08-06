@@ -1,0 +1,21 @@
+<div class="row {{#isread}}asfasd{{/isread}}{{^isread}}not-read-item-message{{/isread}}" style="padding-top:0.8em; padding-bottom: 0.7em;" onclick="selectLastItemMessage($(this)); quickShowItemMessages('{{conversation-display-url}}',{{iid}}, {{imsgrsid}}, $('#conversationContainer'));" >
+
+
+    <div class="col-xs-2 ">
+        <img src="{{senderpic}}" class="avatar img-circle img-thumbnail img-responsive" title="{{sendername}}" alt="{{sendername}}">
+        <span style="width: 100%;font-size: 0.7em; text-align: center; color: #8c8c8c;white-space: nowrap ;">{{time}}</span>
+    </div>
+
+    <div onclick="" class="col-xs-8 last-itemmessage">
+
+            <p><a href="{{itempath}}/{{iid}}"><strong>{{itemname}}</strong></a></p>
+            <p>{{message}}</p>
+
+    </div>
+    <div class="col-xs-2">
+        <img src="{{itempic}}" class="img-responsive" style="width: 100%; height: auto;" >
+
+    </div>
+
+
+</div>

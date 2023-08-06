@@ -1,0 +1,104 @@
+
+
+<div class="modal-header">
+        <h4 class="modal-title">
+            {{additem-form-title}}</h4>
+    </div>
+    <div class="modal-body" style="padding-bottom:1.5em;">
+        <div class="row">
+            <div class="col-md-8" style="border-right: 1px dotted #C2C2C2;">
+
+               <form id="addItemForm" enctype="multipart/form-data" class="form-horizontal" action="{{additem-form-action}}" method="post">
+                    <div class="form-group {{#itemname-has-error}}bg-danger{{/itemname-has-error}}" style="padding-bottom: 0.2em;">
+                        <label for="itemName" class="col-sm-2 control-label">
+                            {{itemname-hint}}</label>
+                        <div class="col-sm-10">
+
+                            <input type="text" id="itemName" value="{{itemname-value}}" class="form-control" name="{{itemname-input-name}}" placeholder="{{itemname-hint}}">
+
+                        </div>
+                    </div>
+                    <div class="form-group {{#amount-has-error}}bg-danger{{/amount-has-error}}" style="padding-bottom: 0.2em;">
+                        <label for="count" class="col-sm-2 control-label">
+                            {{amount-hint}}</label>
+                        <div class="col-sm-10">
+                            <input type="number" class="form-control" value="{{amount-value}}" id="count" name="{{amount-input-name}}" placeholder="{{amount-hint}}">
+                        </div>
+                    </div>
+
+                    <div class="form-group {{#category-has-error}}bg-danger{{/category-has-error}}" style="padding-bottom: 0.2em;">
+                        <label for="category" class="col-sm-2 control-label">
+                            {{category-hint}}</label>
+                        <div class="col-sm-10" id="categorySelectionContainer">
+                            {{>additem-form-category-selection}}
+                        </div>
+
+                        <input type="hidden" name="{{category-input-name}}" value="{{selected-category-id}}" id="selectedCatID" />
+
+
+                    </div>
+
+                    <div class="form-group {{#images-has-error}}bg-danger{{/images-has-error}}" style="padding-bottom: 0.2em;">
+                        <label class="col-sm-2 file control-label">
+                            {{images-hint}}</label>
+
+                        <div class="col-sm-10 dropzone dz-clickable" id="myDrop" style="border:0px;">
+                            <div class="dz-default dz-message" data-dz-message="">
+                                <span>Click to add image(s) of item</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group {{#pricing-has-error}}bg-danger{{/pricing-has-error}}" style="padding-bottom: 0.2em;">
+                        <label class="col-sm-2 control-label">
+                            {{pricing-type-hint}}</label>
+                        <div class="col-sm-10">
+                            {{#pricing-types}}
+                                <label class="radio-inline">
+                                    <input type="radio" name="{{pricing-type-name}}" onclick="updatePriceBox({{should-have-price-value}}, '{{price-type-text}}')" value="{{pricing-type-value}}" {{#selected}}checked{{/selected}}>{{price-type-text}}
+                                </label>
+                            {{/pricing-types}}
+                        </div>
+                    </div>
+
+                    <div class="form-group {{#price-has-error}}bg-danger{{/price-has-error}}" style="padding-bottom: 0.2em;">
+                        <label for="price" class="col-sm-2 control-label">
+                            {{price-hint}}</label>
+                        <div class="col-sm-10">
+                            <div class="input-group">
+                                <div class="input-group-addon">TL</div>
+                                    <input type="text" class="form-control" value="{{price-value}}" id="price" name="{{price-input-name}}" placeholder="{{price-hint}}" {{#price-disabled}}disabled{{/price-disabled}}>
+
+                            </div>
+
+                        </div>
+                    </div>
+
+                    <div class="form-group {{#description-has-error}}bg-danger{{/description-has-error}}" style="padding-bottom: 0.2em;">
+                        <label for="description" class="col-sm-2  control-label">
+                            {{description-hint}}</label>
+                        <div class="col-sm-10">
+
+                            <textarea id="description" class="form-control" rows="5" name="{{description-input-name}}" placeholder="{{description-hint}}">{{description-value}}</textarea>
+
+                        </div>
+                    </div>
+                   <div class="col-sm-8" >
+                       {{#error-message}}
+                           <div class="alert alert-danger">
+                               {{error-message}}
+                           </div>
+
+                       {{/error-message}}
+
+                   </div>
+                    <input type="hidden" name="{{hidden-name}}" value="{{hidden-value}}" />
+                    <input type="text" id="mainpicInput" name="{{mainpic-name}}" value="{{mainpic-value}}" />
+                    <button type="button" id="addButton" onclick="itemAddButtonClicked()" class="btn btn-primary  col-sm-3">Ekle</button>
+
+                </form>
+
+
+            </div>
+
+        </div>
+    </div>

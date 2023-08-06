@@ -1,0 +1,23 @@
+{{#seleted-categories}}
+    <select class="c-select form-control" style="display: inline-block;width: auto;vertical-align: middle;" id="category" onchange="categorySelected($(this))">
+        <option>Seçiniz</option>
+        {{#categories}}
+            <option value="{{catid}}" {{#selected}}selected{{/selected}}>{{catname}}</option>
+        {{/categories}}
+    </select>
+
+{{/seleted-categories}}
+{{^seleted-categories}}
+    <select class="c-select form-control" style="display: inline-block;width: auto;vertical-align: middle;" id="category" onchange="categorySelected($(this))">
+        <option>Seçiniz</option>
+        {{#categories}}
+            <option value="{{catid}}">{{catname}}</option>
+        {{/categories}}
+    </select>
+
+{{/seleted-categories}}
+
+{{#deepest-category-selected}}
+
+    <span>Kategori Seçildi</span>
+{{/deepest-category-selected}}

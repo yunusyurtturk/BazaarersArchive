@@ -1,0 +1,39 @@
+<div class="col-xs-12" style="display:table; height: 100%; ">
+
+    <form method="post" id="sendMessageForm">
+        <div class="form-group">
+            <label for="comment">{{itemmessage-form-textarea-label}}</label>
+            <div class="dropdown pull-right" style="margin-right: 1em;">
+                {{#previously-messaged}}
+                <span id="previouslyReportedIndicator" class="text-danger">{{previously-reported-text}}</span>
+
+                <img class="dropdown-toggle" data-toggle="dropdown" src="/oop/web/images/settings1.png" style="height: 1.2em; cursor: pointer;">
+
+                <ul class="dropdown-menu">
+                    <li><a data-toggle="modal" data-target="#reportConversationModal" data-action="{{report-conversation-form-action}}">Konuşmayı şikayet et</a></li>
+                    <li><a href="#" data-action="{{report-conversation-form-action}}">Konuşma hakkında bu kişiden daha fazla mesaj alma</a></li>
+
+                </ul>
+                {{/previously-messaged}}
+            </div>
+
+            <textarea class="form-control" rows="2" id="new-item-message" name="{{itemmessage-form-textarea-name}}"></textarea>
+        </div>
+        <input type="hidden" id="sendMessageFormItemID" name="{{itemmessage-form-iid-name}}" value="{{itemmessage-form-iid-value}}">
+        <input type="hidden" id="sendMessageFormConversationID" name="{{itemmessage-form-conversation-name}}" value="{{itemmessage-form-conversation-value}}">
+
+
+        <span id="item-message-send-result" class="text-danger"></span>
+
+            <span id="item-message-sending-text" class="text-danger" style="display: none;">Gönderiliyor...</span>
+            <img  id="item-message-sending-indicator"  src="/oop/web/images/ajax-loader.gif" style="display: none;width: 1.4em; height: 1.4em;"/>
+
+
+        {{#previously-messaged}}
+
+            <a href="{{itemmessages-url}}">{{itemmessages-url-text}}</a>
+        {{/previously-messaged}}
+        <button type="button" onclick="sendItemMessage(this, '{{itemmessage-send-form-action}}')" class="btn btn-default btn-send-message" style="float: right;">{{itemmessage-send-form-button-text}}</button>
+    </form>
+
+</div>

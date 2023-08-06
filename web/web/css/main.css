@@ -1,0 +1,155 @@
+@CHARSET "ISO-8859-1";
+
+html,
+body {
+    height: 100%; 
+    padding: 0;
+    margin: 0;
+}
+
+
+hr{
+	margin-top:0px;
+	margin-bottom:6px;
+}
+
+
+/*==========  Mobile First Method  ==========*/
+
+    /* Custom, iPhone Retina */ 
+    @media only screen and (min-width : 320px) {
+        
+        .item-info-container .item-header{
+			font-size: 2em;
+		}
+		
+        .item-info-container .item-description{
+			font-size: 1em;
+		}
+		
+		.lead {
+		    margin-bottom: 0;
+		    font-size: 1.2em;
+		    font-weight: 300;
+		    line-height: 1.4;
+		}
+		hr{
+			margin:0;
+			padding:0;
+		}
+    }
+
+    /* Extra Small Devices, Phones */ 
+    @media only screen and (min-width : 480px) {
+    
+    	.item-info-container .item-header{
+			font-size: 2em;
+		}
+		.item-info-container .item-description{
+			font-size: 1.2em;
+		}
+		.lead {
+		    margin-bottom: 20px;
+		    font-size:1.2em;
+		    font-weight: 300;
+		    line-height: 1.4;
+		}
+    }
+
+    /* Small Devices, Tablets */
+    @media only screen and (min-width : 768px) {
+    	
+    	.item-info-container .item-header{
+			font-size: 2em;
+		}
+		.item-info-container .item-description{
+			font-size: 1.2em;
+		}
+
+    }
+
+    /* Medium Devices, Desktops */
+    @media only screen and (min-width : 992px) {
+
+		.item-info-container .item-header{
+			font-size: 3em;
+		}
+		.item-info-container .item-description{
+			font-size: 1.2em;
+		}
+
+    }
+
+    /* Large Devices, Wide Screens */
+    @media only screen and (min-width : 1200px) {
+		.item-info-container .item-header{
+			font-size: 3em;
+		}
+		.item-info-container .item-description{
+			font-size: 1.2em;
+		}
+    }
+
+.item-info-container{
+	
+	margin-left: 20px;
+}
+.item-info{
+	
+	margin-top:30px;
+	line-height: 1em
+}
+
+.blog-description {
+    color: #999;
+}
+
+.blog-title {
+    margin-top: 30px;
+    margin-bottom: 0;
+    font-size:1.4em;
+    font-weight: normal;
+}    
+
+.maincontainer{
+	height: auto; 
+}
+.parent {
+     display: table; 
+     width: 100%;
+}
+
+.child {
+    display:table-cell;
+    float: none;
+    height:100%;
+   
+}
+.peopleCarouselImg img {
+  width: auto;
+  height: 225px;
+  max-height: 225px;
+}
+
+.btn-goto-user-profile{
+	
+	margin-top:2em;
+}
+.user-thumb{
+	text-align: center;
+}
+.logo-container-cell{
+	text-align: center;
+}
+
+.not-read-item-message{
+	background: #FF0000;
+}
+
+.bg-indicator-styler{
+	padding: 4em;
+}
+
+.user-main-tab-menu-selected{
+	background: #222;
+}

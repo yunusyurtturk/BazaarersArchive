@@ -1,0 +1,21 @@
+<div class="row parent user-item-container" >
+    <div class="col-md-1">
+
+    </div>
+    <div class="col-sm-12 col-md-6">
+        <ul class="list-group">
+        {{#news}}
+            <li class="list-group-item {{news-class}}"><a class="news-in-list" href="{{action}}">{{news-text}}</a> <span style="color: #0066cc; font-size: 0.7em;">{{news-date}}</span> </li>
+
+        {{/news}}
+
+        {{^news}}
+            <div class="col-md-12" style="margin-top: 2em;">
+                <p class=" bg-warning" style=" padding-top: 1em; padding-bottom: 1em; padding-left: 1em; padding-right: 1em;">{{error-message}}</p>
+
+            </div>
+        {{/news}}
+        </ul>
+    </div>
+
+</div>

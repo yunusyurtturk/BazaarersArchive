@@ -1,0 +1,30 @@
+<div class="col-md-4 col-sm-4 col-xs-6 ms-item nopadding cat{{cat}}" >
+    <div class="row nopadding " style="margin: 5px 5px 10px 5px;"  >
+
+        <div class="col-xs-12 thumbnail" style="margin-bottom: 2px;">
+            <div class="img-rounded" style="position: absolute; right: 10px; bottom: 5px;  color: #fFFFFF; padding: 6px; background: rgba(0, 0, 0, 0.70); font-size: 1em; font-weight: bold; font-family: Helvetica;">{{price}}</div>
+            <div class="item-in-list-owner img-rounded" style="position: absolute; left: 10px; bottom: 5px; background: rgba(0, 0, 0, 0.70); padding: 2px 6px 2px 6px;">
+                <a href="{{user-profile-url}}" style="display: block; line-height: 2.5em;">
+                    <img src="{{ownerpic}}" class="avatar  img-circle item-in-list-owner-pic" style="display: block; float: left; width: 2.3em; height: 2.3em; margin-right: 4px; ">
+                    <span class="item-in-list-username">
+                        {{itemowner}}
+                    </span>
+                </a>
+            </div>
+
+            <a href="/item/{{iid}}">
+                <img src="/itempics/{{mainpic}}" alt="{{header}}" class="img-responsive" />
+
+            </a>
+        </div>
+        <div class="col-xs-12 item-in-list-caption {{#new-item}}new-item-in-list{{/new-item}}">
+            <div class="row">
+
+                <a href="/item/{{iid}}" style="width: 80%;display: table; padding-bottom: 0.3em;{{^new-item}}color: #222;{{/new-item}}{{#new-item}}color: #FFF;{{/new-item}} padding-top: 0.3em; width: 100%; font-size: 16px; line-height: 1.2em;  font-family: Roboto, sans-serif;">
+                    <span class="" style="display: table-cell; max-width: 100%; vertical-align: middle; padding-right: 0.3em; padding-left: 0.3em;">{{header}}{{#location}}   <span style="font-size: 0.7em;"> {{location}}km</span>{{/location}}</span>
+                </a>
+
+            </div>
+        </div>
+    </div>
+</div>

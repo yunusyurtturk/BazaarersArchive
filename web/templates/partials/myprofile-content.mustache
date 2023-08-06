@@ -1,0 +1,51 @@
+<div class="col-md-8" id="main-list-container" style="position: static;">
+
+        <div id="myprofile-password-container">
+            <p class="myprofile-content-title">{{myprofile-password-ops-title}}</p>
+            <hr class="myprofile-divider" />
+            <div id="passwordUpdateFormContainer" class="form-group">
+                <label for="current-password" class="col-sm-8 control-label">{{password-ops-current-password-label}}</label>
+                <form id="passwordUpdateForm" method="POST" class="form-horizontal">
+
+
+
+                <div class="col-sm-4" id="passwordUpdateFormInputs">
+                    <input type="password" id="current-password" class="form-control" name="{{password-ops-current-password-name}}" placeholder="{{password-ops-current-password-label}}" />
+                    <input type="password" id="new-password" class="form-control" name="{{password-ops-new-password-name}}" placeholder="{{password-ops-new-password-label}}" />
+                    <button type="button" class="btn btn-primary" onclick="updatePassword('{{password-ops-action}}', $('#passwordUpdateForm'))">{{password-ops-button-text}}</button>
+                </div>
+                    </form>
+            </div>
+            <div class="clearfix"></div>
+        </div>
+
+        <div id="myprofile-email-container">
+            <p class="myprofile-content-title">{{myprofile-email-ops-title}}</p>
+            <hr class="myprofile-divider" />
+           <label class="col-sm-8 control-label">{{email-ops-current-email-label}}</label>
+            <div class="col-sm-4">
+                <p>{{email-ops-email-address}}</p>
+            </div>
+            <div class="clearfix"></div>
+        </div>
+        <div id="myprofile-profile-settings-container">
+            <p class="myprofile-content-title">{{myprofile-profile-ops-title}}</p>
+            <hr class="myprofile-divider" />
+            <label class="col-sm-8 control-label">{{profile-ops-label}}</label>
+            <div class="col-sm-4">
+               <input type="checkbox" id="profileVisibility" checked disabled data-toggle="toggle" data-on="{{profile-ops-public-text}}" data-off="{{profile-ops-private-text}}" data-onstyle="success" data-offstyle="danger">
+            </div>
+            <div class="clearfix"></div>
+        </div>
+
+
+        <div id="myprofile-location-container">
+            <h5 class="myprofile-content-title">{{myprofile-location-ops-title}}</h5>
+            <hr class="myprofile-divider" />
+            <label class="col-sm-8 control-label">{{location-ops-label}}</label>
+            <div class="col-sm-4">
+                <button type="button" class="btn btn-primary" onclick="requestLocation()">{{location-ops-button-text}}</button>
+            </div>
+
+        </div>
+</div>

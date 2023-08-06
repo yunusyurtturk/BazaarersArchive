@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+{{>header}}
+
+<link rel="stylesheet" href="{{site-addr}}/oop/web/css/dropzone.css">
+<script src="https://rawgit.com/enyo/dropzone/master/dist/dropzone.js"></script>
+<script>
+
+            {{#edit-mode}}editMode({{item-id}});{{/edit-mode}}
+</script>
+<body onload="loadPreviouslyAddedFiles('{{previously-uploaded-images-get-url}}'); ">
+
+<div class="container maincontainer ">
+    {{>top-menu}}
+    {{>logo-container}}
+    {{>user-main-tab-menu}}
+    <div class="row">
+
+        {{#logged-in}}
+            {{>additem-form}}
+        {{/logged-in}}
+
+        {{^logged-in}}
+
+            {{>not-logged-in-message}}
+        {{/logged-in}}
+
+    </div>
+
+
+
+</div>
+
+
+
+</body>
+</html>
+

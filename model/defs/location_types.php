@@ -1,0 +1,4 @@
+<?php
+define('LOCATION_TYPE_NO_LOCATION', 0);
+define('LOCATION_TYPE_USER_PUBLIC', 1);
+

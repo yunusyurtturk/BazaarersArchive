@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+
+{{>header}}
+
+
+
+<body>
+
+<div class="container maincontainer">
+    {{>top-menu}}
+    {{>logo-container}}
+    {{>user-main-tab-menu}}
+    <div class="row">
+
+        {{#userProfileEdit}}
+            {{>user-profile-pic-and-info}}
+
+             {{>myprofile-content}}
+
+        {{/userProfileEdit}}
+    </div>
+
+</div>
+
+
+</body>
+</html>
+

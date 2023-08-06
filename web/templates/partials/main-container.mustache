@@ -1,0 +1,76 @@
+<div class=" col-md-9">
+
+
+        {{#new-user}}
+            <div class=" col-md-9 bg-info" id="mainListHeaders" style="margin-top: 2em; margin-bottom: 2em;">
+                <h4>{{welcome-message-header}}</h4>
+                <p style="font-size: 0.95em;">{{welcome-message-description}}</p>
+
+            </div>
+
+        {{/new-user}}
+
+        <div class="row">
+
+            <div class="col-xs-10 col-sm-6" id="mainListHeader">
+                {{>header-message}}
+
+            </div>
+            <div class="hidden-xs col-sm-6 pull-right">
+                 {{>search-container}}
+            </div>
+            <div class="col-xs-2 hidden-sm hidden-md hidden-lg pull-right">
+
+                <h3 class="pull-right" onclick="$('#absoluteSearchBox').animate({width: 'toggle'})()"><i class="fa fa-search"></i></h3>
+            </div>
+            <div id="absoluteSearchBox" class="col-xs-12 hidden-sm hidden-md hidden-lg bg-primary" style="display: none;position: absolute; overflow: hidden; right: 3em; width: 90%; height: auto; -webkit-border-radius:5px ;-moz-border-radius:5px ;border-radius:5px ;  border: solid 1px;">
+                <div class="container"><div class="row">
+                    <div class="col-xs-12">
+                        {{>search-container-xs}}
+                    </div>
+                </div></div>
+
+            </div>
+        </div>
+    {{#list-users-text}}
+        <div class="row">
+            <div class="col-xs-12 col-md-12">
+                <div id="searchUsers" style="display: block; float: left;">
+                    <a href="#" id="listUsersCmd"  onclick="listUsers()">{{list-users-text}}</a>
+                    <a href="#" id="listItemsCmd" onclick="listItems()" style="display: none;">{{list-items-text}}</a>
+                </div>
+                <div id="searchUsers" style="display: block; float: left; margin-right: 1em; margin-left: 1em;">
+                    |
+                </div>
+                <div id="locateUserContainer" style="display: block; float: left;">
+                    <a onclick="positionCallback(coords = {coords : {latitude : '39', longitude : '32'}})" style="cursor: pointer;">{{update-location-text}}</a>
+                </div>
+
+
+            </div>
+        </div>
+    {{/list-users-text}}
+        <div class="row">
+            <div class="container-fluid masonry-container col-sx-12 col-md-12" id="main-list-container">
+
+
+                <div class="row">
+
+                {{#items}}
+                    {{>item-in-list}}
+                {{/items}}
+                </div>
+                {{#users}}
+                    {{>user-in-list}}
+                {{/users}}
+
+                {{#error-message}}
+                    <div class="col-md-12" style="margin-top: 2em;">
+                        <p class=" bg-warning" style=" padding-top: 1em; padding-bottom: 1em; padding-left: 1em; padding-right: 1em;">{{error-message}}</p>
+
+                    </div>
+                {{/error-message}}
+            </div>
+        </div>
+
+</div>

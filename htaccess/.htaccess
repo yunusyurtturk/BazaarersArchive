@@ -1,0 +1,54 @@
+Options +FollowSymLinks
+
+RewriteEngine On
+
+
+RewriteRule ^itempics/([0-9]+)/([a-zA-Z0-9\_]+)\.(bmp|png|gif|jpg)$ oop/mobile/imshow.php?s=$1&im=$2.$3 [L]
+RewriteRule ^userpics/([a-zA-Z0-9\_]+)\.(bmp|png|gif|jpg)$ oop/mobile/imshow.php?t=userpics&im=$1.$2 [L]
+RewriteRule ^userpics/([0-9]+)/([a-zA-Z0-9\_]+)\.(bmp|png|gif|jpg)$ oop/mobile/imshow.php?t=userpics&s=$1&im=$2.$3 [L]
+RewriteRule ^itempics/([a-zA-Z0-9\_]+)\.(bmp|png|gif|jpg)$ oop/resources/itempics/$1.$2 [L]
+RewriteRule ^userpics/([a-zA-Z0-9\_]+)\.(bmp|png|gif|jpg)$ oop/resources/userpics/$1.$2 [L]
+
+RewriteRule ^$ 			/oop/web/index.php [L]
+RewriteRule ^index\.(php|html)$ 			/oop/web/index.php [L]
+RewriteRule ^login$ 			/oop/web/login.php [L]
+RewriteRule ^logout$ 			/oop/web/login.php?action=logout [L]
+RewriteRule ^register$ 			/oop/web/register.php [L]
+RewriteRule ^additem$ 			/oop/web/additem.php [L]
+RewriteRule ^myitems$ 			/oop/web/myprofile.php?action=items [L]
+RewriteRule ^myprofile$ 		/oop/web/myprofile.php [L]
+RewriteRule ^itemmessages$ 		/oop/web/itemmessages.php [L]
+
+RewriteRule ^explore(/)?([0-9]+)?$ 			/oop/web/index.php?action=explore&page=$2 [R,L]
+RewriteRule ^followeds-items$ 			/oop/web/index.php?action=followeds_items [R=301,L]
+RewriteRule ^follower-items$ 			/oop/web/index.php?action=follower_items [L]
+RewriteRule ^followers$ 			/oop/web/index.php?action=followers [L]
+RewriteRule ^followings$ 			/oop/web/index.php?action=followings [L]
+RewriteRule ^news$ 			/oop/web/user.php?action=news [L]
+RewriteRule ^items$ 			/oop/web/index.php?action=myitems [L]
+
+RewriteRule ^item/([0-9]+)$ 			/oop/web/item.php?iid=$1 [L]
+
+RewriteRule ^user/([0-9]+)$ 			/oop/web/user.php?uid=$1 [L]
+RewriteRule ^user/([0-9]+)/info$ 		/oop/web/user.php?uid=$1&action=info [L]
+RewriteRule ^user/([0-9]+)/items$ 		/oop/web/user.php?uid=$1&action=items [L]
+RewriteRule ^user/([0-9]+)/items/([0-9]+)$ 	/oop/web/user.php?uid=$1&action=items&page=$2 [L]
+RewriteRule ^user/([0-9]+)/followers$ 		/oop/web/user.php?uid=$1&action=followers [L]
+RewriteRule ^user/([0-9]+)/followers/([0-9]+)$ 	/oop/web/user.php?uid=$1&action=items&page=$2 [L]
+RewriteRule ^user/([0-9]+)/followings$ 		/oop/web/user.php?uid=$1&action=followings [L]
+RewriteRule ^user/([0-9]+)/followings/([0-9]+)$ /oop/web/user.php?uid=$1&action=followings&page=$2 [L]
+
+RewriteRule ^user/([0-9]+)/follower_items$ 		/oop/web/user.php?uid=$1&action=follower_items [L]
+RewriteRule ^user/([0-9]+)/follower_items/([0-9]+)$ 	/oop/web/user.php?uid=$1&action=follower_items&page=$2 [L]
+
+RewriteRule ^user/([0-9]+)/followeds_items$ 		/oop/web/user.php?uid=$1&action=followeds_items [L]
+RewriteRule ^user/([0-9]+)/followeds_items/([0-9]+)$ 	/oop/web/user.php?uid=$1&action=followeds_items&page=$2 [L]
+
+
+
+
+RewriteCond %{REQUEST_URI} !^/mobile
+RewriteRule ^(.*)$ /oop/web/$1 [NC,L]
+
+
+#RewriteRule ^(.*)$ /oop/$1 [R=301,L]

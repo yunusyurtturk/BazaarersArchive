@@ -1,0 +1,1 @@
+﻿/oop/deneme.php, BASARDIKKK

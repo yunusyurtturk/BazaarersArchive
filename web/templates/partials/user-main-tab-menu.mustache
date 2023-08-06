@@ -1,0 +1,28 @@
+{{#is-logged-in}}
+
+<div class="row">
+    <div class="user-main-tab-menu">
+    <div class="navbar-header">
+        <a class="navbar-brand" style="font-family: 'Roboto Condensed',sans-serif;
+        text-transform: uppercase; line-height: 20px; font-size:20px; font-weight: 400; padding: 20px;">Bazaarers</a>
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#userMainTabMenu">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+        </button>
+
+    </div>
+    <div class="navbar-collapse collapse" id="userMainTabMenu">
+        <ul class="nav navbar-nav">
+            <li {{#searchrange-selected}}class="user-main-tab-menu-selected"{{/searchrange-selected}}><a href="{{searchrange-link}}">{{user-top-menu-explore-text}}</a></li>
+            <li {{#following-items-selected}}class="user-main-tab-menu-selected"{{/following-items-selected}}><a href="{{followings-items-link}}">{{user-top-menu-followings-items-text}}</a></li>
+            <li {{#followers-selected}}class="user-main-tab-menu-selected"{{/followers-selected}}><a href="{{followers-link}}">{{user-top-menu-followers-text}}</a></li>
+            <li {{#followings-selected}}class="user-main-tab-menu-selected"{{/followings-selected}}><a href="{{followings-link}}">{{user-top-menu-followings-text}}</a></li>
+            <li {{#my-items-selected}}class="user-main-tab-menu-selected"{{/my-items-selected}}><a href="{{my-items-link}}">{{user-top-menu-my-items-text}}</a></li>
+
+        </ul>
+    </div>
+        </div>
+</div>
+{{/is-logged-in}}

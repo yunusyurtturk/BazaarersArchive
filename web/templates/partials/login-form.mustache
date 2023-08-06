@@ -1,0 +1,99 @@
+
+    <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">
+            ×</button>
+        <h4 class="modal-title">
+            {{additem-form-title}}</h4>
+    </div>
+    <div class="modal-body" style="padding-bottom:1.5em;">
+        <div class="row">
+            <div class="col-md-8" style="border-right: 1px dotted #C2C2C2;padding-right: 30px;">
+                <!-- Nav tabs -->
+                <ul class="nav nav-tabs" style="margin-bottom:1em;">
+                    <li class="{{^register}}active{{/register}}"><a href="#Login" data-toggle="tab">{{login-tab-text}}</a></li>
+                    <li class="{{#register}}active{{/register}}"><a href="#Registration" data-toggle="tab">{{register-tab-text}}</a></li>
+                </ul>
+                <!-- Tab panes -->
+                <div class="tab-content">
+                    <div class="tab-pane {{^register}}active{{/register}}" id="Login">
+                        <form role="form" class="form-horizontal" action="{{login-form-action}}" method="post">
+                            <div class="form-group">
+                                <label for="email" class="col-sm-2 control-label">
+                                    {{email-hint}}</label>
+                                <div class="col-sm-10">
+                                    <input type="text" class="form-control" id="email" name="{{login-email-name}}" placeholder="{{email-hint}}">
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="password" class="col-sm-2 control-label">
+                                    {{password-hint}}</label>
+                                <div class="col-sm-10">
+                                    <input type="password" class="form-control" id="password" name="{{login-password-name}}" placeholder="{{password-hint}}">
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <div class="col-sm-2"></div>
+                            {{#login-result-message}}
+                                <div class="col-sm-10 bg-danger" style="padding-top: 0.8em; padding-bottom: 0.1em">
+                                    <p>{{login-result-message}}</p>
+                                </div>
+                            {{/login-result-message}}
+                            </div>
+                            <div class="row">
+                                <div class="col-sm-2">
+                                </div>
+                                <div class="col-sm-10">
+                                    <button type="button" id="loginButton" onclick="disableAndSubmitButton(this)" class="btn btn-primary btn-sm btn-disable-and-submit">
+                                        {{login-button-text}}</button>
+                                    <a href="javascript:;">{{forget-password-text}}</a>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                    <div class="tab-pane {{#register}}active{{/register}}" id="Registration">
+                        <form role="form" class="form-horizontal" action="{{register-form-action}}" method="post">
+                            <div class="form-group">
+                                <label for="email" class="col-sm-2 control-label">
+                                    {{username-hint}}</label>
+                                <div class="col-sm-10">
+
+                                    <input type="text" class="form-control" name="{{register-username-name}}" placeholder="{{username-hint}}">
+
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="email" class="col-sm-2 control-label">
+                                    {{email-hint}}</label>
+                                <div class="col-sm-10">
+                                    <input type="email" class="form-control" id="email" name="{{register-email-name}}" placeholder="{{email-hint}}">
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="password" class="col-sm-2 control-label">
+                                    {{password-hint}}</label>
+                                <div class="col-sm-10">
+                                    <input type="password" class="form-control" id="password" name="{{register-password-name}}" placeholder="{{password-hint}}">
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-sm-2">
+                                </div>
+                                <div class="col-sm-10">
+                                    <button type="submit" class="btn btn-primary btn-sm" onclick="disableAndSubmitButton($(this))">
+                                        {{register-button-text}}</button>
+                                    <button type="button" class="btn btn-default btn-sm">
+                                        Cancel</button>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                {{#error-message}}
+                    {{error-message}}
+                {{/error-message}}
+            </div>
+        </div>
+    </div>

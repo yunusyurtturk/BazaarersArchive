@@ -1,0 +1,28 @@
+<div class="col-md-2 col-sm-2 col-xs-4  narrow-neighbour" style="text-align: center;">
+    <div class="thumbnail-item-in-list">
+        <a href="{{userpath}}{{uid}}">
+            <img src="{{userpicpath}}{{userpic}}" class="avatar img-circle img-thumbnail" />
+            <div class="user-in-list-caption">
+                <h5 class="user-in-list-username">{{username}}</h5>
+
+            </div>
+            <div class="user-in-list-info">
+            <span>{{#distance}}{{distance}} km{{/distance}}{{#distance}}{{#itemcount}} - {{/itemcount}}{{/distance}}{{#itemcount}}{{itemcount}}{{/itemcount}}</span>
+            </div>
+
+        </a>
+        {{#logged-in}}
+        <a class="btn has-spinner user-add-button {{#is_following}}user-remove-button{{/is_following}}" autocomplete="off" style=""  onclick="quickFollowUser('{{follow-user-action}}', $(this))">
+
+            <span class="glyphicon {{#is_following}} glyphicon-minus{{/is_following}} {{^is_following}} glyphicon-plus{{/is_following}}" aria-hidden="true"></span>
+
+             <span class="spinner active" style="display: none;">
+             <i class="fa fa-spinner fa-spin"></i>
+             </span>
+            <!--
+            <span class="glyphicon {{#is_following}} glyphicon-minus{{/is_following}} {{^is_following}} glyphicon-plus{{/is_following}}" aria-hidden="true"></span>
+            -->
+        </a>
+        {{/logged-in}}
+    </div>
+</div>
